@@ -26,7 +26,7 @@ process.source = cms.Source("PoolSource",
 
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(200))
 ~~~
-{: .source}
+{: .language-python}
 
 Note that `fileNames` is expecting a `vstring`, which stands for "vector of strings". So these
 configuration files can easily support running over multiple input files (with the obvious increase in
@@ -44,7 +44,7 @@ files.extend(FileUtils.loadListFromFile("data/CMS_MonteCarlo2012_Summer12_DR53X_
 process.source = cms.Source(
    "PoolSource", fileNames=cms.untracked.vstring(*files))
 ~~~
-{: .source}
+{: .language-python}
 
 These .txt files live in the `data/` subdirectory and contain "eospublic" links to all the ROOT files
 in a sample.
@@ -62,9 +62,13 @@ process.maxEvents = cms.untracked.PSet(input=cms.untracked.int32(-1))
 process.TFileService = cms.Service(
     "TFileService", fileName=cms.string("output_fullfile.root"))
 // save and quit
+~~~
+{: .language-python}
 
+~~~
 $ cmsRun configs/simulation_cfg.py
 ~~~
+{: .language-bash}
 
 A script called `submit_jobs.sh` exists in the AOD2NanoAODOutreachTool repository for anyone who has
 access to an HTCondor system on which they can run this CMS code. When working inside an Open Data container,
@@ -85,7 +89,7 @@ done interactively with ROOT via the `hadd` method:
 $ cmsenv # if this is a new shell
 $ hadd mergedfile.root input1.root input2.root input3.root #...and so on...
 ~~~
-{: .source}
+{: .language-bash}
 
 Note: the internal content of the ROOT files must be the same (ex: tree names and branch lists) for ROOT to add them intelligently. 
 
