@@ -32,10 +32,12 @@ information that is no longer needed. Data is processed through the following st
 
 The figure below shows example for tracking, ECAL, and HCAL-based objects. 
 
+<img src="dataTiers.PNG" alt="Correction flow" />
 ![](assets/img/dataTiers.PNG)
 
 ## Storage & processing
 
+<img src="computers.PNG" alt="Correction flow" />
 ![](assets/img/computers.PNG)
 
 As the data is being skimmed it is also moving around the world. All RAW data is stored on tape in two
