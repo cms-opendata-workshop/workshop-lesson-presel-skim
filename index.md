@@ -14,7 +14,15 @@ of NanoAOD files, though this will not be required to continue with the workshop
 
 > ## Prerequisites
 >
-> Complete the two previous lessons.
+> Complete the two previous lessons on physics objects.
 {: .prereq}
+
+> ## Big questions
+> 
+> 1. What does CMS do to process raw data into AOD and NanoAOD files?
+> 2. What selections have been made when producing NanoAOD files?
+> 3. How can I run over many AOD files to produce NanoAOD?
+>
+{: .checklist}
 
 {% include links.md %}

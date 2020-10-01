@@ -1,7 +1,7 @@
 ---
 title: "Running your own NanoAOD"
 teaching: 10
-exercises: 20
+exercises: 10
 questions:
 - "How can I run over many AOD files to produce NanoAOD?"
 objectives:
@@ -66,17 +66,20 @@ process.TFileService = cms.Service(
 $ cmsRun configs/simulation_cfg.py
 ~~~
 
-Given the limits of an Open Data container, a few options for parallelization are available:
+A script called `submit_jobs.sh` exists in the AOD2NanoAODOutreachTool repository for anyone who has
+access to an HTCondor system on which they can run this CMS code. When working inside an Open Data container,
+a few options for parallelization are available:
 
  * Execute cmsRun once per sample for jobs that process all the ROOT files in a sample.
  * Create a python or bash script to loop through a list of files, setting input and output file names
  in a configuration file template, and executing cmsRun. This will produce many ROOT files for each
  sample.
  * Use a cloud-based solution such the example coming in a later lesson.
+ * Other solutions that you devise!
 
 If you use a method that produces more than one output ROOT file per sample (ex: 54 output files for VBF
 Higgs production), combining them could simplify future steps of your physics analysis. This can be
-done very naturally with ROOT via the `hadd` method:
+done interactively with ROOT via the `hadd` method:
 
 ~~~
 $ cmsenv # if this is a new shell
@@ -86,12 +89,8 @@ $ hadd mergedfile.root input1.root input2.root input3.root #...and so on...
 
 Note: the internal content of the ROOT files must be the same (ex: tree names and branch lists) for ROOT to add them intelligently. 
 
->##Challenge: hadd 2 root files
->
->You will have at least one `output.root` file already. Make another one from a short test (or your
->full file if it has finished!) and give it a different output name. Perform the `hadd` command and
->make sure the resulting ROOT file has the structure and merged content that you expect.
-{: .challenge}
+There is also a script called `merge_jobs.py` (with the bash wrapper `merge_jobs.sh`) provided in the repository
+to look for ROOT files in a certain output path and merge them using ROOT's TChain::Merge method. 
 
 
 {% include links.md %}

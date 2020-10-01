@@ -1,15 +1,13 @@
 ---
 title: "CMS Data Flow"
-teaching: 10
+teaching: 15
 exercises: 0
 questions:
-- "What selections have been made when producing NanoAOD files?"
+- "What does CMS do to process raw data into AOD and NanoAOD files?"
 objectives:
 - "Review the flow of CMS data processing"
-- "Summarize selections on objects made during NanoAOD production"
 keypoints:
 - "Compression and selections happen at most levels of CMS data processing"
-- "Only objects deemed to be *interesting* survive to NanoAOD files"
 ---
 
 CMS data follows a complex processing path after making it through the trigger selections you learned about in a previous lesson.
