@@ -60,7 +60,7 @@ for (size_t i = 0; i < names.size(); i++) {
   }
 }
 ~~~
-{: .source}
+{: .language-cpp}
 
 ## Momentum thresholds
 
@@ -131,7 +131,7 @@ if (!isData) {
   //...similar for other particles...
 }
 ~~~
-{: .source}
+{: .language-cpp}
 
 All of these selections on objects are intended to produce a compact, manageable-size dataset for the
 Higgs->Tau Tau analysis that we will study more deeply in the next lesson. Understanding the selection
