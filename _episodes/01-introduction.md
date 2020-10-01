@@ -32,11 +32,11 @@ information that is no longer needed. Data is processed through the following st
 
 The figure below shows example for tracking, ECAL, and HCAL-based objects. 
 
-![](assets/img/dataTiers.png)
+![](../assets/img/dataTiers.png)
 
 ## Storage & processing
 
-![](assets/img/computers.png)
+![](../assets/img/computers.png)
 
 As the data is being skimmed it is also moving around the world. All RAW data is stored on tape in two
 copies, and the the RECO and AOD files are stored at various "tier 1" and "tier 2" computing centers
