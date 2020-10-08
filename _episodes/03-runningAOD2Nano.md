@@ -55,20 +55,23 @@ Parallelization is important for efficiently running over many files. To get a t
 set the `maxEvents` parameter in `simulation_cfg.py` to -1 and set the job running. This will give
 a time estimate for 1 file.
 
-~~~
-// change the max events and output file name
-process.maxEvents = cms.untracked.PSet(input=cms.untracked.int32(-1))
-
-process.TFileService = cms.Service(
-    "TFileService", fileName=cms.string("output_fullfile.root"))
-// save and quit
-~~~
-{: .language-python}
-
-~~~
-$ cmsRun configs/simulation_cfg.py
-~~~
-{: .language-bash}
+>## Time test
+>Edit the configuration file and run it:
+>~~~
+>// change the max events and output file name
+>process.maxEvents = cms.untracked.PSet(input=cms.untracked.int32(-1))
+>
+>process.TFileService = cms.Service(
+>    "TFileService", fileName=cms.string("output_fullfile.root"))
+>// save and quit
+>~~~
+>{: .language-python}
+>
+>~~~
+>$ cmsRun configs/simulation_cfg.py > fullfile.log 2>&1 &
+>~~~
+>{: .language-bash}
+{: .prereq}
 
 A script called `submit_jobs.sh` exists in the AOD2NanoAODOutreachTool repository for anyone who has
 access to an HTCondor system on which they can run this CMS code. When working inside an Open Data container,
